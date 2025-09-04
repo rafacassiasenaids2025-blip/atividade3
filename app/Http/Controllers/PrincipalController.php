@@ -20,4 +20,20 @@ class PrincipalController extends Controller
     {
         return view('profile');
     }
+
+    public function sobreNos()
+    {
+        return view('sobre-nos');
+    }
+
+    public function contato()
+    {
+        return view('contato');
+    }
+
+    public function enviarContato(Request $request)
+    {
+        $dados = $request->only(['nome', 'email', 'telefone']);
+        return view('contato-recebido', compact('dados'));
+    }
 }
